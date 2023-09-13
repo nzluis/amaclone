@@ -7,6 +7,7 @@ import { ApiError } from '../types/ApiError'
 import { getError } from '../utils'
 import LoadingBox from '../component/LoadingBox'
 import MessageBox from '../component/MessageBox'
+import ProductItem from "../component/ProductItem"
 
 type State = {
   products: Product[],
@@ -66,11 +67,7 @@ export default function HomePage() {
     <Row>
           {products.map(product => (
             <Col key={product.slug} sm={6} md={4} lg={3}>
-                <Link to={'/product/' + product.slug}>
-                    <img src={product.image} alt={product.name} className='product-image'/>
-                    <h2>{product.name}</h2>
-                </Link>
-                <p>{product.price}€</p>
+               <ProductItem product={product} />
             </Col>
           ))}
           </Row>
