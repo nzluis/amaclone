@@ -1,7 +1,9 @@
-import { Product } from "./Product";
+import { Product } from "./models/productModel";
+import { User } from "./models/userModel";
+import bcrypt from 'bcryptjs'
 
 export const sampleProducts: Product[] = [
-    {
+    {   
         name: 'UAE maillot',
         slug: 'uae-maillot',
         image: '../public/images/uae.jpg',
@@ -60,5 +62,20 @@ export const sampleProducts: Product[] = [
         description: 'high quality',
         rating: 4.5,
         numReviews: 10,
+    }
+]
+
+export const sampleUsers: User[] = [
+    {
+        name: 'Joe',
+        email: 'admin@example.com',
+        password: bcrypt.hashSync('123456'),
+        isAdmin: true
+    },
+    {
+        name: 'John',
+        email: 'user@example.com',
+        password: bcrypt.hashSync('123456'),
+        isAdmin: false
     }
 ]
