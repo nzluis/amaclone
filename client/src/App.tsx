@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { Badge, Button, Container, Nav, Navbar } from 'react-bootstrap'
+import { Badge, Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
 import { Link, Outlet } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Store } from './Store.tsx'
@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   const {
-    state: { mode, cart },
+    state: { mode, cart, userInfo },
     dispatch,
   } = useContext(Store)
 
@@ -18,6 +18,15 @@ function App() {
 
   const switchModeHandler = () => {
     dispatch({ type: 'SWITCH_MODE' })
+  }
+  
+  const signoutHandler = () => {
+    dispatch({ type: 'USER_SIGNOUT' })
+    localStorage.removeItem('userInfo')
+    localStorage.removeItem('cartItems')
+    localStorage.removeItem('shippingAddress')
+    localStorage.removeItem('paymentMethod')
+    window.location.href = '/signin'
   }
 
   return (
@@ -42,7 +51,21 @@ function App() {
               </Badge>
               )}
             </Link>
-            <a href="/signin" className='nav-link'>Sign In</a>
+            {userInfo ? (
+              <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                <Link
+                  className="dropdown-item"
+                  to="#signout"
+                  onClick={signoutHandler}
+                >
+                  Sign Out
+                </Link>
+              </NavDropdown>
+            ) : (
+              <Link className="nav-link" to="/signin">
+                Sign In
+              </Link>
+            )}
           </Nav>
         </Navbar>
       </header>
