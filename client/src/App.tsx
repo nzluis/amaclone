@@ -36,7 +36,7 @@ function App() {
         <Navbar expand='lg'>
           <Container>
            <LinkContainer to="/">
-              <Navbar.Brand>tsamazona</Navbar.Brand>
+              <Navbar.Brand>Amaclone</Navbar.Brand>
             </LinkContainer>
           </Container>
           <Nav>
