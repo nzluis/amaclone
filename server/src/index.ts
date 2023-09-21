@@ -6,7 +6,6 @@ import mongoose from 'mongoose'
 import { productRouter } from './routers/productRouter'
 import { seedRouter } from './routers/seedRouter'
 import { userRouter } from './routers/userRouter'
-import { orderRouter } from './routers/orderRouter'
 
 dotenv.config()
 
@@ -35,7 +34,6 @@ app.use(
   
   app.use('/api/products', productRouter)
   app.use('/api/users', userRouter)
-  app.use('/api/orders', orderRouter)
   app.use('/api/seed', seedRouter)
 
 const PORT = 4000
