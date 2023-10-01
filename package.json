@@ -1,0 +1,21 @@
+{
+  "name": "amaclone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd server && npm --force install  && npm run build  && cd ../client && npm install && npm run build",
+    "start": "TG_ALLOW_MIXED=ALLOW  node server/build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nzluis/amaclone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nzluis/amaclone/issues"
+  },
+  "homepage": "https://github.com/nzluis/amaclone#readme"
+}

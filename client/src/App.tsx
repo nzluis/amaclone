@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { Badge, Button, Container, Form, FormControl, InputGroup, Nav, NavDropdown, Navbar } from 'react-bootstrap'
+import { Button, Container, Form, FormControl, InputGroup, Nav, NavDropdown, Navbar } from 'react-bootstrap'
 import { Link, Outlet } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Store } from './Store.tsx'
@@ -49,8 +49,8 @@ function App() {
                   type="text"
                   name="q"
                   id="q"
-                  placeholder="Search Amazona"
-                  aria-label="Search Amazona"
+                  placeholder="Search Amaclone"
+                  aria-label="Search Amaclone"
                   aria-describedby="button-search"
                 ></FormControl>
                 <Button
