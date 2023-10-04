@@ -156,7 +156,7 @@ function App() {
               </Form>
             </div>
             <Navbar>
-              <Nav className="w-100 justify-content-end">
+              <Nav className="w-100 justify-content-around">
                 <Link
                    to="#"
                    className="nav-link header-link"
